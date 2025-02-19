@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ailabs.remexec"
+version = "0.0.0"
+description = "Remote execution library for LLM agents"
+readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+requires-python = ">=3.10, <=3.13"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[project.urls]
+Documentation = "https://github.com/ai-labs/remexec#readme"
+Issues = "https://github.com/ai-labs/remexec/issues"
+Source = "https://github.com/ai-labs/remexec"
+
+
+[tool.setuptools.package-dir]
+"ailabs.remexec" = "sources"
+
+[tool.setuptools.dynamic.dependencies]
+file = ["require/common.txt"]
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = { file = ["require/dev.txt"] }
+

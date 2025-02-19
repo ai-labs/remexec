@@ -1,0 +1,5 @@
+# building
+build ~= 1.2.2
+
+# testing
+rich ~= 13.9.4
