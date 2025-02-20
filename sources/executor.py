@@ -35,7 +35,7 @@ class Commands:
         self.image = image
 
     def start(self) -> fabric.Result:
-        command = f'docker run --rm --name {self.name} --detach {self.image} bash "while true; do sleep 60; done"'
+        command = f'docker run --rm --name {self.name} --detach {self.image} bash -c "while true; do sleep 60; done"'
         result = self.cxn.run(command, hide=True, warn=True)
 
         if result.ok:
